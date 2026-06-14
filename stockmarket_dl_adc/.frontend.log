@@ -1,0 +1,9 @@
+
+> ticker-teller-ui@1.1 dev
+> vite --port 5173
+
+
+  VITE v5.4.21  ready in 1159 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose

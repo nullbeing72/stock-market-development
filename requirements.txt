@@ -1,0 +1,32 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  Ticker-Teller — Backend Requirements (v4.0.0 · ADC edition)
+#  Updated: FCM removed; IDEC autoencoder deep clustering added.
+#
+#  Install:
+#    python -m venv .venv
+#    source .venv/bin/activate          # Windows: .venv\Scripts\activate
+#    pip install -r requirements.txt
+#
+#  GPU (optional — CUDA 12.x):
+#    pip install torch>=2.3.0 --index-url https://download.pytorch.org/whl/cu121
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi>=0.111.0,<0.137.0        # REST + SSE streaming
+uvicorn[standard]>=0.30.0,<0.50.0  # ASGI server (websockets + httptools extras)
+
+# ── Data fetching ─────────────────────────────────────────────────────────────
+yfinance>=0.2.40,<2.0.0          # Yahoo Finance OHLCV + ticker metadata
+httpx>=0.27.0,<0.29.0            # HTTP client (yfinance dependency, pinned for stability)
+
+# ── Data processing ───────────────────────────────────────────────────────────
+pandas>=2.2.0,<3.1.0             # DataFrame ops, rolling windows, resampling
+numpy>=1.26.0,<2.5.0             # Numerical core; array ops throughout
+
+# ── Machine learning ──────────────────────────────────────────────────────────
+scikit-learn>=1.5.0,<2.0.0       # MinMaxScaler, KMeans (IDEC Phase 2 init)
+torch>=2.3.0,<2.13.0             # Autoencoder + HybridModel (CNN/BiLSTM/Attention)
+                                 # CPU build installed by default; see GPU note above
+
+# ── API / validation ──────────────────────────────────────────────────────────
+pydantic>=2.7.0,<3.0.0           # Request/response schema validation
