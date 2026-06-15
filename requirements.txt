@@ -1,5 +1,5 @@
 # ─────────────────────────────────────────────────────────────────────────────
-#  Ticker-Teller — Backend Requirements (v4.0.0 · ADC edition)
+#  Ticker-Teller — Backend Requirements
 #  Updated: FCM removed; IDEC autoencoder deep clustering added.
 #
 #  Install:
